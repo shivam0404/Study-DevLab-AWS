@@ -1,83 +1,267 @@
-# 🚀 DevLab – Innovative Code Evaluation and Learning Platform  
+# 🚀 DevLab — Innovative Code Evaluation & Learning Platform
 
-[![AWS](https://img.shields.io/badge/Cloud-AWS-orange?logo=amazon-aws)](https://aws.amazon.com/)  
-[![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)](https://reactjs.org/)  
-[![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js)](https://nodejs.org/)  
-[![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)  
+[![Cloud](https://img.shields.io/badge/Cloud-AWS-orange?logo=amazon-aws)](https://aws.amazon.com/)
+[![Frontend](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![Styling](https://img.shields.io/badge/UI-TailwindCSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Backend](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Evaluator](https://img.shields.io/badge/Evaluator-Puppeteer-40B5A4?logo=google-chrome&logoColor=white)](https://pptr.dev/)
+[![ML Reco](https://img.shields.io/badge/Service-Flask-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Database](https://img.shields.io/badge/DB-DynamoDB-4053D6?logo=amazondynamodb&logoColor=white)](https://aws.amazon.com/dynamodb/)
+[![Storage](https://img.shields.io/badge/Storage-S3-569A31?logo=amazon-s3&logoColor=white)](https://aws.amazon.com/s3/)
+[![CI/CD](https://img.shields.io/badge/Deploy-Elastic%20Beanstalk-3B3B3B?logo=awselasticbeanstalk&logoColor=white)](https://aws.amazon.com/elasticbeanstalk/)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
-An **Ed-Tech Web Development Learning Platform** designed to provide interactive coding challenges, real-time feedback, adaptive resource recommendations, and community collaboration – all powered by **AWS Cloud**.  
-
----
-
-## 📖 About  
-DevLab enables learners to practice **HTML, CSS, JavaScript, React, and Tailwind** coding challenges in a secure and scalable environment. It integrates **AWS services** for deployment, monitoring, and authentication while ensuring an engaging user experience.  
-
----
-
-## 🎯 Objectives  
-- Provide an **interactive coding environment** with real-time evaluation.  
-- Deliver **personalized learning paths** with ML-driven recommendations.  
-- Enable **secure authentication & role-based access**.  
-- Ensure **scalable architecture** with AWS Elastic Beanstalk & CloudFront.  
-- Foster **community-driven learning** via forums and discussions.  
-- Track learner progress through **analytics dashboards**.  
+DevLab is an **AWS-powered Ed-Tech platform** for learning modern web development with **interactive coding challenges, real-time feedback, adaptive recommendations,** and a **community forum**. It combines a **React** front-end (with Monaco editor) and a **Node/Express** API with a **headless Chrome (Puppeteer) evaluator**, plus a **Flask** microservice for recommendations—**scalable on AWS**.
 
 ---
 
-## 🔑 Features  
-- 👤 **User Authentication & Profiles** – Secure login, registration, role-based access.  
-- 🖥 **Interactive Coding Dashboard** – Real-time code editor & feedback.  
-- 🏆 **Challenges & Progress Tracking** – Leaderboards, scoring system.  
-- 🎯 **Resource Recommendation System** – Personalized tutorials & exercises.  
-- 💬 **Discussion Forum** – Collaborative Q&A and topic-based discussions.  
-- 📊 **Performance Analytics** – Visual dashboards with detailed reports.  
-- ⚡ **Serverless Evaluation** – AWS Lambda for real-time code validation.  
-- 🔒 **Data Security & Compliance** – IAM, Cognito, and encryption standards.  
+## 🧭 Table of Contents
+
+- [About](#-about)
+- [Key Features](#-key-features)
+- [Architecture](#-architecture)
+- [Demo & Screens](#-demo--screens)
+- [Tech Stack](#-tech-stack)
+- [Monorepo Structure](#-monorepo-structure)
+- [Getting Started](#-getting-started)
+- [Environment Variables](#-environment-variables)
+- [API Reference](#-api-reference)
+- [Data Model](#-data-model)
+- [Evaluator (Puppeteer)](#-evaluator-puppeteer)
+- [ML Recommendations (Flask)](#-ml-recommendations-flask)
+- [Deployment (AWS)](#-deployment-aws)
+- [Monitoring & Cost](#-monitoring--cost)
+- [Security Hardening](#-security-hardening)
+- [Testing](#-testing)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [FAQ](#-faq)
+- [License](#-license)
 
 ---
 
-## 🏗️ Modules  
-1. User Authentication & Profile Management  
-2. Interactive Learning Dashboard  
-3. Challenges & Progress Tracking  
-4. Resource Recommendation System  
-5. Discussion Forum  
-6. Admin Panel for Content Management  
-7. Real-Time Challenge Evaluation  
-8. Frontend Search & Content Display  
-9. Monitoring & Reporting  
-10. Cost Monitoring & Optimization  
+## 📖 About
+
+DevLab enables learners to practice **HTML, CSS, JavaScript, React, and Tailwind** through hands-on challenges. Submissions are executed and validated in an **isolated headless browser**; learners receive **instant feedback**, **scores**, and **personalized resources**. A simple **forum** fosters collaboration and Q&A.
 
 ---
 
-## 🛠️ Tech Stack  
-**Frontend**: React, Tailwind CSS, AWS Amplify  
-**Backend**: Node.js, Express.js, Flask  
-**Database**: DynamoDB  
-**Deployment**: AWS Elastic Beanstalk, EC2, CloudFront, S3  
-**Monitoring & Security**: AWS CloudWatch, CloudTrail, IAM, Cognito  
+## 🌟 Key Features
+
+- 👤 **Auth & Profiles** — JWT-based auth, user profiles, role flags (user/admin).
+- 🧑‍💻 **Monaco Editor Playground** — Real-time code editing with preview.
+- 🧪 **Instant Evaluation** — Headless Chrome (Puppeteer) runs custom validation against learner output.
+- 🏆 **Challenges & Leaderboard** — Track progress, attempts, and scores.
+- 🎯 **Adaptive Recommendations** — Flask microservice returns learning resources based on history.
+- 💬 **Discussion Forum** — Post questions, share tips, and discuss solutions.
+- 📊 **Analytics** — Progress and usage insights (expandable).
+- ☁️ **Cloud-Native** — S3 for assets/CSV, DynamoDB for users/posts, EB/EC2 for API, Amplify for frontend.
+- 🔐 **Security-First Defaults** — Env-based secrets, IAM roles, least privilege.
+
+> **Note:** Current evaluator runs on **Node + Puppeteer**. A serverless/Lambda move is on the roadmap.
 
 ---
 
-## ☁️ AWS Services Used  
-- **Amazon EC2** – Compute resources for backend services.  
-- **Amazon S3** – Static assets and user resource storage.  
-- **AWS DynamoDB** – User data, progress tracking, forum content.  
-- **AWS Amplify** – Frontend hosting and CI/CD pipeline.  
-- **AWS Elastic Beanstalk** – Scalable backend deployment.  
-- **AWS CloudWatch & CloudTrail** – Monitoring, logging, auditing.  
-- **AWS IAM & Cognito** – Authentication, authorization, and access control.  
+## 🧩 Architecture
+
+![DevLab AWS Architecture](docs/architecture1.png)
+
+---
+## 🖼️ Demo Walkthrough
+
+> Click any image to view full size. This gallery presents the product flow from sign-up to results.
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <a href="docs/registration2.png">
+        <img src="docs/registration2.png" alt="Registration" width="95%">
+      </a>
+      <br/>
+      <sub><b>1) Registration</b> — Create an account with basic details.</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="docs/login2.png">
+        <img src="docs/login2.png" alt="Login" width="95%">
+      </a>
+      <br/>
+      <sub><b>2) Login</b> — Secure access to your learning workspace.</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="docs/landing.png">
+        <img src="docs/landing.png" alt="Landing" width="95%">
+      </a>
+      <br/>
+      <sub><b>3) Landing</b> — Welcome page with quick actions & navigation.</sub>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" width="33%">
+      <a href="docs/Challenges1.png">
+        <img src="docs/Challenges1.png" alt="Challenges List" width="95%">
+      </a>
+      <br/>
+      <sub><b>4) Challenges (I)</b> — Browse curated tasks by topic & difficulty.</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="docs/Challenges2.png">
+        <img src="docs/Challenges2.png" alt="Challenge Details" width="95%">
+      </a>
+      <br/>
+      <sub><b>5) Challenges (II)</b> — View requirements, hints & scoring rules.</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="docs/forum.png">
+        <img src="docs/forum.png" alt="Forum" width="95%">
+      </a>
+      <br/>
+      <sub><b>6) Forum</b> — Discuss problems, share tips, and get help.</sub>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" width="33%">
+      <a href="docs/coding_workspace.png">
+        <img src="docs/coding_workspace.png" alt="Coding Workspace" width="95%">
+      </a>
+      <br/>
+      <sub><b>7) Coding Workspace</b> — Monaco editor with live preview & tests.</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="docs/resource_collection.png">
+        <img src="docs/resource_collection.png" alt="Resource Collection" width="95%">
+      </a>
+      <br/>
+      <sub><b>8) Resource Collection</b> — Add optional study links for guidance.</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="docs/result.png">
+        <img src="docs/result.png" alt="Results" width="95%">
+      </a>
+      <br/>
+      <sub><b>9) Results</b> — Instant feedback, pass/fail status, and next steps.</sub>
+    </td>
+  </tr>
+</table>
+
+---
+## 🛠 Tech Stack
+
+<div align="center">
+
+<a href="https://react.dev/"><img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white" alt="React"/></a>
+<a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white" alt="Vite"/></a>
+<a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS"/></a>
+<img src="https://img.shields.io/badge/Monaco%20Editor-1f7a8c" alt="Monaco Editor"/>
+<br/>
+<a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" alt="Node.js"/></a>
+<a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white" alt="Express"/></a>
+<img src="https://img.shields.io/badge/JWT-000000" alt="JWT"/>
+<br/>
+<a href="https://pptr.dev/"><img src="https://img.shields.io/badge/Puppeteer-40B5A4?logo=puppeteer&logoColor=white" alt="Puppeteer"/></a>
+<a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white" alt="Flask"/></a>
+<br/>
+<a href="https://aws.amazon.com/dynamodb/"><img src="https://img.shields.io/badge/DynamoDB-4053D6?logo=amazondynamodb&logoColor=white" alt="DynamoDB"/></a>
+<a href="https://aws.amazon.com/s3/"><img src="https://img.shields.io/badge/Amazon%20S3-569A31?logo=amazon-s3&logoColor=white" alt="Amazon S3"/></a>
+<br/>
+<a href="https://aws.amazon.com/elasticbeanstalk/"><img src="https://img.shields.io/badge/Elastic%20Beanstalk-3B3B3B?logo=amazon-aws&logoColor=white" alt="Elastic Beanstalk"/></a>
+<a href="https://aws.amazon.com/amplify/"><img src="https://img.shields.io/badge/AWS%20Amplify-FF9900?logo=awsamplify&logoColor=white" alt="AWS Amplify"/></a>
+<a href="https://aws.amazon.com/cloudwatch/"><img src="https://img.shields.io/badge/CloudWatch-FF4F8B?logo=amazon-aws&logoColor=white" alt="CloudWatch"/></a>
+<a href="https://aws.amazon.com/cloudtrail/"><img src="https://img.shields.io/badge/CloudTrail-232F3E?logo=amazon-aws&logoColor=white" alt="CloudTrail"/></a>
+<a href="https://aws.amazon.com/iam/"><img src="https://img.shields.io/badge/IAM-232F3E?logo=amazon-aws&logoColor=white" alt="IAM"/></a>
+
+</div>
+
+<br/>
+
+<details>
+  <summary><b>Frontend</b> — React, Vite/CRA, TailwindCSS, Monaco Editor</summary>
+  <ul>
+    <li>SPA with route guards and layout shells</li>
+    <li>Monaco editor playground with live preview</li>
+    <li>Utility-first styling via TailwindCSS</li>
+  </ul>
+</details>
+
+<details>
+  <summary><b>Backend API</b> — Node.js, Express.js, JSON Web Tokens</summary>
+  <ul>
+    <li>REST endpoints for auth, posts, attempts</li>
+    <li>JWT-based sessions and role flags</li>
+    <li>Input validation, rate limiting, CORS</li>
+  </ul>
+</details>
+
+<details>
+  <summary><b>Evaluator</b> — Puppeteer (headless Chrome)</summary>
+  <ul>
+    <li>Runs user HTML/CSS/JS in sandboxed headless Chrome</li>
+    <li>Applies whitelisted validation scripts; returns structured results</li>
+    <li>Timeouts and resource limits for safety</li>
+  </ul>
+</details>
+
+<details>
+  <summary><b>ML Recommender</b> — Flask (Python)</summary>
+  <ul>
+    <li>Consumes anonymized attempt history & skill tags</li>
+    <li>Returns ranked resources from S3-backed catalog</li>
+    <li>Pluggable for embeddings or CF later</li>
+  </ul>
+</details>
+
+<details>
+  <summary><b>Data</b> — DynamoDB & Amazon S3</summary>
+  <ul>
+    <li><code>users</code>, <code>posts</code>, <code>attempts</code> tables (GSIs for user/challenge lookups)</li>
+    <li>S3 for static assets, CSV datasets, screenshots</li>
+  </ul>
+</details>
+
+<details>
+  <summary><b>Infra</b> — Elastic Beanstalk, Amplify, CloudWatch/CloudTrail, IAM</summary>
+  <ul>
+    <li>EB for Node API & Flask; Amplify for static frontend</li>
+    <li>CloudWatch logs/metrics; CloudTrail auditing</li>
+    <li>IAM roles (least privilege) for DynamoDB/S3 access</li>
+  </ul>
+</details>
+
+<!-- Quick summary table for skimmers -->
+| 🧩 Layer           | 🛠️ Stack |
+|--------------------|----------|
+| **Frontend**       | React · Vite/CRA · TailwindCSS · Monaco Editor |
+| **Backend API**    | Node.js · Express.js · JWT |
+| **Evaluator**      | Puppeteer (headless Chrome) |
+| **ML Recommender** | Flask (Python) |
+| **Data**           | DynamoDB (Users, Posts, Attempts) · Amazon S3 (assets/CSV) |
+| **Infra**          | Elastic Beanstalk (API & Flask) · Amplify (Frontend) · CloudWatch/CloudTrail · IAM |
 
 ---
 
-## 📐 Architecture  
-```mermaid
-flowchart TD
-    A[Frontend - React/Tailwind] -->|API Calls| B[AWS API Gateway]
-    B --> C[Backend - Node.js/Flask]
-    C --> D[DynamoDB - User Data]
-    C --> E[S3 - Resources]
-    C --> F[Lambda - Code Evaluation]
-    B --> G[Amplify/CloudFront - Hosting]
-    G --> A
-    C --> H[CloudWatch & CloudTrail - Monitoring]
+## 📚 References
+
+### Research & Articles
+- [IJFANS Paper (PDF)](https://www.ijfans.org/uploads/paper/f6838e1e98c7748d6f5c492888c6e2f5.pdf)
+- [Springer Chapter](https://link.springer.com/chapter/10.1007/978-981-97-1329-5_28)
+- [IEEE Xplore — Document 10497289](https://ieeexplore.ieee.org/document/10497289)
+- [IEEE Xplore — Document 10426375](https://ieeexplore.ieee.org/abstract/document/10426375)
+- [AWS DevOps Blog — Automated Code Review on Pull Requests (CodeCommit & CodeBuild)](https://aws.amazon.com/blogs/devops/automated-code-review-on-pull-requests-usingaws-codecommit-and-aws-codebuild/)
+- [arXiv Preprint](https://arxiv.org/abs/2307.08705)
+- [Springer Chapter](https://link.springer.com/chapter/10.1007/978-3-030-60036-5_3)
+- [Journal of Cloud Computing (SpringerOpen)](https://journalofcloudcomputing.springeropen.com/articles/10.1186/s13677-019-0134-y)
+
+> *Some resources (Springer, IEEE Xplore) may require institutional access.*
+
+---
+
+### AWS Services Documentation
+- [Amazon EC2 — Concepts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+- [Amazon CloudWatch — Docs](https://docs.aws.amazon.com/cloudwatch/)
+- [AWS Elastic Beanstalk — Docs](https://docs.aws.amazon.com/elasticbeanstalk/)
+- [Amazon DynamoDB — Docs](https://docs.aws.amazon.com/dynamodb/)
+- [AWS DevOps Blog — Complete CI/CD with CodeCommit, CodeBuild, CodeDeploy & CodePipeline](https://aws.amazon.com/blogs/devops/complete-ci-cd-with-aws-codecommit-awscodebuild-aws-codedeploy-and-aws-codepipeline/)
+- [Amazon S3 — Docs](https://docs.aws.amazon.com/s3/)
+- [AWS Amplify — Docs](https://docs.amplify.aws/)
+- [AWS IAM — Docs](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
