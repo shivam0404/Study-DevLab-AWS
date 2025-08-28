@@ -81,33 +81,3 @@ flowchart TD
     B --> G[Amplify/CloudFront - Hosting]
     G --> A
     C --> H[CloudWatch & CloudTrail - Monitoring]
----
-
-## 📚 References  
-
-### 🔗 Research Papers & Articles  
-- [IJFANS Journal Paper](https://www.ijfans.org/uploads/paper/f6838e1e98c7748d6f5c492888c6e2f5.pdf)  
-- [Springer – AI in Education](https://link.springer.com/chapter/10.1007/978-981-97-1329-5_28)  
-- [IEEE – Cloud-based Learning Systems](https://ieeexplore.ieee.org/document/10497289)  
-- [IEEE – Secure EdTech Architectures](https://ieeexplore.ieee.org/abstract/document/10426375)  
-- [AWS Blog – Automated Code Review](https://aws.amazon.com/blogs/devops/automated-code-review-on-pull-requests-usingaws-codecommit-and-aws-codebuild/)  
-- [ArXiv – Recent Advances](https://arxiv.org/abs/2307.08705)  
-- [Springer – Scalable Platforms](https://link.springer.com/chapter/10.1007/978-3-030-60036-5_3)  
-- [Journal of Cloud Computing](https://journalofcloudcomputing.springeropen.com/articles/10.1186/s13677-019-0134-y)  
-
----
-
-### ☁️ AWS Services Documentation  
-- [Amazon EC2 Concepts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)  
-- [Amazon CloudWatch](https://docs.aws.amazon.com/cloudwatch/)  
-- [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/)  
-- [Amazon DynamoDB](https://docs.aws.amazon.com/dynamodb/)  
-- [AWS CI/CD (CodePipeline, CodeBuild, CodeDeploy)](https://aws.amazon.com/blogs/devops/complete-ci-cd-with-aws-codecommit-awscodebuild-aws-codedeploy-and-aws-codepipeline/)  
-- [Amazon S3](https://docs.aws.amazon.com/s3/)  
-- [AWS Amplify](https://docs.amplify.aws/)  
-- [AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)  
-
----
-
-### 📊 Project Review PPT  
-- [Google Slides – DevLab Project Review](https://docs.google.com/presentation/d/1a7oHFrnxGaHoyeuwTAeiAhYfIXfmaDnM/edit?usp=sharing&ouid=104184248513287203297&rtpof=true&sd=true)  
