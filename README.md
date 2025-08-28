@@ -82,7 +82,3 @@ flowchart TD
     G --> A
     C --> H[CloudWatch & CloudTrail - Monitoring]
 
-## 📸 Screenshots
-
-### 🔑 Login / Registration
-![Login Screenshot](assets/screenshots/login.png)
