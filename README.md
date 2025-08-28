@@ -56,8 +56,8 @@ DevLab enables learners to practice **HTML, CSS, JavaScript, React, and Tailwind
       <sub><b>1) Registration</b> — Create an account with basic details.</sub>
     </td>
     <td align="center" width="33%">
-      <a href="docs/login2.png">
-        <img src="docs/login2.png" alt="Login" width="95%">
+      <a href="docs/loginform2.png">
+        <img src="docs/loginform2.png" alt="Login" width="95%">
       </a>
       <br/>
       <sub><b>2) Login</b> — Secure access to your learning workspace.</sub>
