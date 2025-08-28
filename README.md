@@ -28,13 +28,13 @@ flowchart TD
   B --> C[(DynamoDB)]
   B --> D[(S3 - Resource Storage)]
   A -->|Recommendations| E[Flask Service - Elastic Beanstalk]
-  subgraph AWS Cloud
+
+  subgraph AWS_Cloud
     B
     C
     D
     E
   end
-
 
 # React + Vite
 
