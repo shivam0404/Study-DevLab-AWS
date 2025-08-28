@@ -81,3 +81,8 @@ flowchart TD
     B --> G[Amplify/CloudFront - Hosting]
     G --> A
     C --> H[CloudWatch & CloudTrail - Monitoring]
+
+## 📸 Screenshots
+
+### 🔑 Login / Registration
+![Login Screenshot](assets/screenshots/login.png)
