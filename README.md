@@ -39,7 +39,13 @@ DevLab enables learners to practice **HTML, CSS, JavaScript, React, and Tailwind
 
 ## 🧩 Architecture
 
-![DevLab AWS Architecture](docs/architecture1.png)
+<p align="center">
+  <a href="docs/architecture1.png">
+    <img src="docs/architecture1.png" alt="DevLab AWS Architecture" width="75%">
+  </a>
+  <br/>
+  <sub>High-level AWS layout for DevLab.</sub>
+</p>
 
 ---
 ## 🖼️ Demo Walkthrough
