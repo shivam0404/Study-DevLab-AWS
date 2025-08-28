@@ -81,6 +81,7 @@ flowchart TD
     B --> G[Amplify/CloudFront - Hosting]
     G --> A
     C --> H[CloudWatch & CloudTrail - Monitoring]
+---
 
 ## 📚 References  
 
