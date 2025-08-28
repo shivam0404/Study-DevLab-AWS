@@ -15,31 +15,6 @@ DevLab is an **AWS-powered Ed-Tech platform** for learning modern web developmen
 
 ---
 
-## 🧭 Table of Contents
-
-- [About](#-about)
-- [Key Features](#-key-features)
-- [Architecture](#-architecture)
-- [Demo & Screens](#-demo--screens)
-- [Tech Stack](#-tech-stack)
-- [Monorepo Structure](#-monorepo-structure)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [API Reference](#-api-reference)
-- [Data Model](#-data-model)
-- [Evaluator (Puppeteer)](#-evaluator-puppeteer)
-- [ML Recommendations (Flask)](#-ml-recommendations-flask)
-- [Deployment (AWS)](#-deployment-aws)
-- [Monitoring & Cost](#-monitoring--cost)
-- [Security Hardening](#-security-hardening)
-- [Testing](#-testing)
-- [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [FAQ](#-faq)
-- [License](#-license)
-
----
-
 ## 📖 About
 
 DevLab enables learners to practice **HTML, CSS, JavaScript, React, and Tailwind** through hands-on challenges. Submissions are executed and validated in an **isolated headless browser**; learners receive **instant feedback**, **scores**, and **personalized resources**. A simple **forum** fosters collaboration and Q&A.
@@ -243,11 +218,10 @@ DevLab enables learners to practice **HTML, CSS, JavaScript, React, and Tailwind
 ## 📚 References
 
 ### Research & Articles
-- [IJFANS Paper (PDF)](https://www.ijfans.org/uploads/paper/f6838e1e98c7748d6f5c492888c6e2f5.pdf)
+
 - [Springer Chapter](https://link.springer.com/chapter/10.1007/978-981-97-1329-5_28)
 - [IEEE Xplore — Document 10497289](https://ieeexplore.ieee.org/document/10497289)
 - [IEEE Xplore — Document 10426375](https://ieeexplore.ieee.org/abstract/document/10426375)
-- [AWS DevOps Blog — Automated Code Review on Pull Requests (CodeCommit & CodeBuild)](https://aws.amazon.com/blogs/devops/automated-code-review-on-pull-requests-usingaws-codecommit-and-aws-codebuild/)
 - [arXiv Preprint](https://arxiv.org/abs/2307.08705)
 - [Springer Chapter](https://link.springer.com/chapter/10.1007/978-3-030-60036-5_3)
 - [Journal of Cloud Computing (SpringerOpen)](https://journalofcloudcomputing.springeropen.com/articles/10.1186/s13677-019-0134-y)
